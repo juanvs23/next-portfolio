@@ -1,0 +1,23 @@
+aside.networks {
+  position: fixed;
+  right: 19px;
+  z-index: 999999;
+  top: 25%;
+  h3.our-network {
+    text-orientation: use-glyph-orientation;
+    writing-mode: vertical-rl;
+    margin: 0;
+    line-height: 2;
+  }
+  .networks-container {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    font-size: 1.2rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    i {
+    }
+  }
+}
