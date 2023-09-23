@@ -1,3 +1,4 @@
+import nodemailer from "nodemailer";
 export interface ItemView {
   title: string;
   class: string;
@@ -33,11 +34,11 @@ export interface InputInterface {
   active: boolean;
 }
 export enum Status {
-  idle,
-  loading,
-  succeeded,
-  failed,
-  error,
+  idle = "idle",
+  loading = "loading",
+  succeeded = "succeeded",
+  failed = "failed",
+  error = "error",
 }
 export interface FormInterface {
   status: Status;
@@ -54,4 +55,17 @@ export interface ProjectItem {
 export interface ProjectSectionType {
   title: string;
   projectsItems: ProjectItem[];
+}
+export interface sendMailType {
+  nodemailer?: any;
+  auth: {
+    user: string;
+    password: string;
+  };
+  mailData: {
+    from: string;
+    to: string;
+    subject: string;
+    html: string;
+  };
 }

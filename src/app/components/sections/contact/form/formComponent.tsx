@@ -18,6 +18,7 @@ export default function FormComponent() {
   const nameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
   const phoneRef = useRef<HTMLInputElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
   const subjectRef = useRef<HTMLInputElement>(null);
   const messageRef = useRef<HTMLTextAreaElement>(null);
   const [formData, setFormData] = useState(initialForm);
@@ -72,7 +73,8 @@ export default function FormComponent() {
       inputs: newsInputs,
     };
     setFormData(newFormData);
-    console.log(formData);
+    //   console.log(formData);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [phone]);
   /**
    * Functions
@@ -102,15 +104,15 @@ export default function FormComponent() {
     let newStatus: Status = Status.idle;
     let newMessage: string = "";
     if (status === Status.idle) {
-      /*   if (!token) {
-          captchaRef.current?.execute();
-        } */
+      if (!token) {
+        captchaRef.current?.execute();
+      }
       const newInputs = inputs.map((input) => {
         if (input.inputValue.length === 0) {
           input.inputError = "This field is required";
         }
         if (input.name == "phone" && phone.length < 8) {
-          console.log(input.inputValue);
+          // console.log(input.inputValue);
           input.inputError = "Please enter a valid phone number";
         }
         if (input.name == "email" && !regexEmail.test(input.inputValue)) {
@@ -137,30 +139,61 @@ export default function FormComponent() {
           inputs: newInputs,
         });
       } else {
-        // if (token) {
-        newStatus = Status.loading;
-        newMessage = "Sending...";
-        console.log("object");
-        setFormData({
-          inputs: newInputs,
-          status: newStatus,
-          message: newMessage,
-        });
-        const sendformData = new FormData();
-        formData.inputs.forEach((input) => {
-          sendformData.append(input.name, input.inputValue);
-        });
-
-        fetch("/api/nodemail", {
-          method: "POST",
-          headers: {},
-          body: sendformData,
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            console.log(data);
+        if (token) {
+          newStatus = Status.loading;
+          newMessage = "Sending...";
+          //  console.log("object");
+          setFormData({
+            inputs: newInputs,
+            status: newStatus,
+            message: newMessage,
           });
-        // }
+          const sendformData = new FormData();
+          formData.inputs.forEach((input) => {
+            sendformData.append(input.name, input.inputValue);
+          });
+
+          fetch("/api/nodemail", {
+            method: "POST",
+            body: sendformData,
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              toast.success(data.message, {
+                position: "top-center",
+                autoClose: false,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                theme: "colored",
+              });
+              setFormData({
+                status: data.status,
+                message: data.message,
+                inputs: initialForm.inputs,
+              });
+              setPhone("");
+              const el = e.target as HTMLFormElement;
+              el.reset();
+            })
+            .catch((error) => {
+              toast.error(error.message, {
+                position: "top-center",
+                autoClose: false,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                theme: "colored",
+              });
+              setFormData({
+                status: error.status,
+                message: error.message,
+                inputs: initialForm.inputs,
+              });
+            });
+        }
       }
     }
   };
@@ -277,11 +310,11 @@ export default function FormComponent() {
       </div>
       <div className="container">
         <div className=" pb-6 pl-2 pr-2 w-full flex flex-col items-center gap-3 justify-center">
-          {/*   <HCaptchaInput
+          <HCaptchaInput
             sitekey="0b2fcab0-167d-488b-84a7-1da2b7354d1e"
             ref={captchaRef}
             onVerify={handlerToken}
-          /> */}
+          />
           <button
             disabled={
               formData.inputs.filter((input) => input.inputError !== null)

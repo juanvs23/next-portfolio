@@ -225,7 +225,7 @@ export const projects: ProjectSectionType = {
     {
       id: 12,
       name: "Book project",
-      url: "http://62.171.164.5/books/",
+      url: "https://projects.coltmandev.dev/books/",
       description: "",
       img: "/img/book-test.jpg",
     },

@@ -1,9 +1,11 @@
 import { initialForm } from "@/app/constants";
 import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
+import { Status } from "@/types";
 
 export async function POST(request: Request) {
-  // console.log(request);
+  const mail = process.env.EMAIL_ACCOUNT;
+  const password = process.env.EMAIL_PASSWORD;
   const formData = await request.formData();
   let data = initialForm;
   data.inputs.map((input) => {
@@ -24,26 +26,54 @@ export async function POST(request: Request) {
     }
   });
   const transporter = nodemailer.createTransport({
-    host: "smtp.elasticemail.com",
-    port: 2525,
-    //secure: true,
+    service: "gmail",
+    secure: false,
     auth: {
-      user: "juanvs23@gmail.com",
-      pass: "608842CD4E4565C97D19A864406D490172F3",
+      user: mail,
+      pass: password,
+    },
+    tls: {
+      rejectUnauthorized: false,
     },
   });
-  await transporter.sendMail(
-    {
-      from: "juanvs23@gmail.com",
-      to: "juanv23@gmail.com",
-      subject: "Test Email Subject",
-      text: "Example Plain Text Message Body",
-    },
-    (err, info) => {
-      console.log(err);
-      console.log(info);
-    }
-  );
-
-  return NextResponse.json({ data });
+  try {
+    transporter.sendMail(
+      {
+        from: mail,
+        to: mail,
+        subject: `Message from porfolio website of ${data.inputs[0].inputValue} <${data.inputs[2].inputValue}>`,
+        html: `Full Name: ${data.inputs[0].inputValue}<br>
+               Phone: ${data.inputs[1].inputValue}<br>
+               Email: ${data.inputs[2].inputValue}<br>
+               Subject: ${data.inputs[3].inputValue}<br>
+               Message: ${data.inputs[4].inputValue}`,
+      },
+      (err, info) => {
+        if (err) {
+          data.status = Status.error;
+        }
+        if (info) {
+          data.status = Status.succeeded;
+        }
+      }
+    );
+    return NextResponse.json(
+      {
+        status: Status.succeeded,
+        message:
+          "Message sent successfully, I will contact you as soon as possible",
+      },
+      { status: 200 }
+    );
+  } catch (error) {
+    return NextResponse.json(
+      {
+        status: Status.error,
+        message:
+          "Please try again... Later, Sorry. Contact me by email on my footer",
+      },
+      { status: 204 }
+    );
+  }
+  return NextResponse.json({ data: "bad Request" }, { status: 400 });
 }
