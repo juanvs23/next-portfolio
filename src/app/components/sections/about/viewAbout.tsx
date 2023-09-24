@@ -38,7 +38,7 @@ const ViewAbout = () => {
           <div className="w-full md:w-6/12 flex align-center justify-center items-center">
             <Atropos highlight={true}>
               <div data-atropos-offset="1" className="img-content">
-                <Image
+                <img
                   src="/img/aboutme.jpg"
                   alt="about"
                   width={480}

@@ -20,7 +20,7 @@ function ProyectItemComponent({ data }: { data: ProjectItem }) {
     <Atropos>
       <article className="projectItem">
         <div className="project-overlay"></div>
-        <Image
+        <img
           src={img}
           alt={name}
           width={650}
