@@ -1,5 +1,5 @@
 import { FormInterface, ProjectSectionType, Status } from "@/types";
-
+const email = process.env.NEXT_PUBLIC_EMAIL;
 export const socialNetWorks = {
   title: "Follow me",
   netWorks: [
@@ -293,4 +293,25 @@ export const initialForm: FormInterface = {
       active: false,
     },
   ],
+};
+//<i class="fa-solid fa-envelope-open"></i>
+//<i class="fa-solid fa-envelope-open-text"></i>
+//<i class="fa-solid fa-envelope"></i>
+export const contactUs = {
+  title: "Contact me",
+  subtitle: "Send me a message",
+  formTitle: "Contact form",
+  emailData: {
+    title: "Send me an email",
+    hoverTitle: "Click me to send",
+    clickedTitle: "Thank you for contacting me",
+    email: email,
+    icons: {
+      initialIcon: "fa-solid fa-envelope-open",
+      hoverIcon: "fa-solid fa-envelope-open-text",
+      clickedIcon: "fa-solid fa-envelope",
+    },
+  },
+  form: initialForm,
+  networks: socialNetWorks,
 };
