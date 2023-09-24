@@ -17,7 +17,17 @@ aside.networks {
     justify-content: center;
     align-items: center;
     margin-top: 15px;
-    i {
+    a {
+      transition: 0.5s;
+      i {
+        transition: 0.5s;
+      }
+      &:hover {
+        i {
+          color: white !important;
+          transform: scale(1.1);
+        }
+      }
     }
   }
 }

@@ -9,12 +9,7 @@ export default function Home() {
       >
         <Sections.Hero />
         <GlassComponents gbColor="linear-gradient(135deg, #444, #010a0a94)" />
-        <VideoBg
-          videoUrl={[
-            { type: "video/webm", url: "/videos/home.webm" },
-            { type: "video/mp4", url: "/videos/home.mp4" },
-          ]}
-        />
+        <VideoBg videoUrl={[{ type: "video/mp4", url: "/videos/home.mp4" }]} />
       </section>
       <section id="about" className="z-10">
         <Sections.About />
@@ -35,7 +30,12 @@ export default function Home() {
       >
         <Sections.Projects />
         <GlassComponents gbColor="linear-gradient(135deg, #444, rgb(6 27 51 / 50%));" />
-        <VideoBg videoUrl="/videos/code.mp4" />
+        <VideoBg
+          videoUrl={[
+            { type: "video/webm", url: "/videos/code.webm" },
+            { type: "video/mp4", url: "/videos/code.mp4" },
+          ]}
+        />
       </section>
       <section
         id="contact"
