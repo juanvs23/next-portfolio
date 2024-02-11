@@ -98,7 +98,7 @@ export async function POST(request: Request) {
       }) as React.ReactElement,
     });
 
-    return Response.json({ email });
+    return NextResponse.json({ email });
   } catch (error) {
     return NextResponse.json(
       {
