@@ -8,7 +8,6 @@ export default function JobComponent({ job }: { job: JobItem }) {
     date: { startDate, endDate },
     company,
     description,
-    tools,
   } = job;
   const months = [
     "Jan",
@@ -30,40 +29,32 @@ export default function JobComponent({ job }: { job: JobItem }) {
   const showEndDate = endDate
     ? `${months[endDate.getMonth()]}/${endDate.getFullYear()}`
     : "Present";
+  const defineColor = (id: number) => {
+    if (id % 2 === 0) {
+      return "bg-blue-600";
+    }
+    return "bg-blue-800";
+  };
   return (
-    <article className="job-container m-3 p-3 rounded-xl bg-gray-800 shadow-lg shadow-indigo-500/40">
-      <div className="job-data pb-3 flex">
-        <div className="w-1/6 flex justify-center items-center">
-          <i className="fa-solid fa-building" style={{ fontSize: "3rem" }}></i>
-        </div>
-        <div className="w-5/6">
-          <h3 className="job-title text-xl md:text-3xl font-bold uppercase">
-            {title}
-          </h3>
-          <h4 className="job-company text-xl md:text-2xl text-gray-300">
-            {company}
-          </h4>
-          <div className="job-date">
-            {showStartDate} - {showEndDate}
-          </div>
-        </div>
-      </div>
-      <hr className="mb-3 mt-3" />
-      <div className="job-content">
-        <div className="job-description">{description}</div>
+    <article
+      className={`transform transition  hover:-translate-y-2 ml-10 relative flex items-center px-6 py-4 ${defineColor(
+        job.id
+      )} text-white rounded mb-10 flex-col md:flex-row space-y-4 md:space-y-0`}
+      data-aos="fade-right"
+      data-aos-duration="1000"
+    >
+      <div className="w-5 h-5 bg-blue-600 absolute -left-10 transform -translate-x-2/4 rounded-full z-10 mt-2 md:mt-0"></div>
 
-        <div className="job-tools bg-blue-600">
-          <h4 className="job-tools-title">
-            <i className="fa-solid fa-screwdriver-wrench"></i> Technics Tools
-          </h4>
-          <ol className="job-tools-list">
-            {tools.map((tool) => (
-              <li key={tool.id}>
-                <i className={`fa-brands ${tool.icon}`}></i> {tool.title}
-              </li>
-            ))}
-          </ol>
-        </div>
+      <div className="w-10 h-1 bg-blue-300 absolute -left-10 z-0"></div>
+
+      <div className="flex flex-col gap-2">
+        <h2 className="text-lg">{company}</h2>
+        <h2 className="text-xl font-bold">{title}</h2>
+        <h3>
+          {" "}
+          {showStartDate} - {showEndDate}{" "}
+        </h3>
+        <p>{description}</p>
       </div>
     </article>
   );

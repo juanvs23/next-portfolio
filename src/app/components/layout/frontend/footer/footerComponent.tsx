@@ -13,7 +13,7 @@ export default function FooterComponent() {
           Juan Carlos Avila
         </a>
       </h2>
-      <p>Copyright © 2023</p>
+      <p>Copyright © {new Date().getFullYear()}</p>
     </footer>
   );
 }

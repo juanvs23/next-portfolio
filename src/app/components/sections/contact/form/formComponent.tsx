@@ -323,7 +323,7 @@ export default function FormComponent() {
                 : false
             }
             type="submit"
-            className={`rounded-full pt-2 pb-2 pl-10 pr-10 w-full md:w-1/4 duration-300 text-white transition-all ${
+            className={`rounded-full pt-2 pb-2 pl-10 pr-10 w-full md:w-2/4 xl:w-1/4 duration-300 text-white transition-all ${
               formData.inputs.filter((input) => input.inputError !== null)
                 .length > 0
                 ? "bg-red-700 cursor-not-allowed hover:bg-red-700"

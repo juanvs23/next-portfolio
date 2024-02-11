@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useEffectOnce } from "usehooks-ts";
 import Typewriter from "react-ts-typewriter";
-import anime from "animejs/lib/anime.es.js";
+//import anime from "animejs/lib/anime.es.js";
 
 import "./index.scss";
 
@@ -13,7 +13,7 @@ export default function HeroComponent() {
   const randomColor = () => {
     changeColorPosition(Math.floor(Math.random() * textColors.length));
   };
-  useEffectOnce(() => {
+  /*  useEffectOnce(() => {
     anime({
       targets: ".type-text",
       opacity: [0, 1],
@@ -36,7 +36,7 @@ export default function HeroComponent() {
         { filter: "blur(0px)" },
       ],
     });
-  });
+  }); */
 
   return (
     <>
@@ -58,7 +58,7 @@ export default function HeroComponent() {
           >
             <Typewriter
               text={words}
-              speed={250}
+              speed={200}
               delay={1000}
               loop={true}
               cursor={false}

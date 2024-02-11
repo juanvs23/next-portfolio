@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import { SwiperSlide } from "swiper/react";
 import Atropos from "atropos/react";
 import "atropos/atropos.css";
 const ViewAbout = () => {
@@ -38,7 +37,7 @@ const ViewAbout = () => {
           <div className="w-full md:w-6/12 flex align-center justify-center items-center">
             <Atropos highlight={true}>
               <div data-atropos-offset="1" className="img-content">
-                <img
+                <Image
                   src="/img/aboutme.jpg"
                   alt="about"
                   width={480}

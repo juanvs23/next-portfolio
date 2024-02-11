@@ -2,7 +2,7 @@
 import { hexToRgbA } from "@/app/helper";
 import { CardSkill } from "@/types";
 import { useState } from "react";
-import { GrFormNextLink } from "@react-icons/all-files/gr/GrFormNextLink";
+import { Icons } from "@/app/components";
 
 function CardItems({ title, icon, points, color }: CardSkill) {
   const frontColor = ` linear-gradient(90deg, rgba(${hexToRgbA(
@@ -24,7 +24,7 @@ function CardItems({ title, icon, points, color }: CardSkill) {
         }}
       >
         <button className="changeClass" onClick={() => setAddClass(!addClass)}>
-          Click me! <GrFormNextLink size={16} color="white" />
+          Click me! <Icons.ArrowIcon size={`16`} color="white" />
         </button>
         <div className="card-points">
           <ul>
@@ -39,9 +39,9 @@ function CardItems({ title, icon, points, color }: CardSkill) {
         style={{ backgroundImage: frontColor, backgroundColor: color }}
       >
         <button className="changeClass" onClick={() => setAddClass(!addClass)}>
-          Click me! <GrFormNextLink size={16} color="white" />
+          Click me! <Icons.ArrowIcon size={`16`} color="white" />
         </button>
-        <div className="card-icon">{icon}</div>
+        <div className="card-icon">{icon as React.ReactNode}</div>
         <div className="card-title">{title}</div>
       </div>
     </div>
