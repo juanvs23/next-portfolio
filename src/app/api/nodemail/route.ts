@@ -27,13 +27,15 @@ export async function POST(request: Request) {
   });
   const transporter = nodemailer.createTransport({
     service: "gmail",
-    secure: false,
+    secure: true,
     auth: {
       user: mail,
       pass: password,
     },
+    port: 465,
+    host: "smtp.gmail.com",
     tls: {
-      rejectUnauthorized: false,
+      rejectUnauthorized: true,
     },
   });
   try {
