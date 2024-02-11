@@ -184,7 +184,7 @@ export const projects: ProjectSectionType = {
     {
       id: 12,
       name: "Book project",
-      url: "https://projects.coltmandev.dev/books/",
+      url: "https://projects.coltmandev.dev/product-book/",
       description: "",
       img: "/img/book-test.jpg",
     },
@@ -208,6 +208,13 @@ export const projects: ProjectSectionType = {
       url: "https://emprende.cesde.edu.co/",
       description: "",
       img: "/img/emprende.jpg",
+    },
+    {
+      id: 16,
+      name: "Fancy Login",
+      description: "",
+      img: "https://github.com/juanvs23/fancy-login/raw/master/public/demo.jpg",
+      url: "https://projects.coltmandev.dev/fancy-login/",
     },
   ],
 };
@@ -273,4 +280,18 @@ export const contactUs = {
   },
   form: initialForm,
   networks: socialNetWorks,
+};
+export const formMessage = {
+  success: "Message sent successfully",
+  error: "Please try again... Later, Sorry. Contact me by email on my footer",
+  sending: "Sending message",
+  errors: {
+    field: "This field is required",
+    phone: "Please enter a valid phone number",
+    email: "Please enter a valid email",
+  },
+};
+export const footer = {
+  develop: "Develop by ",
+  copy: "Copyright © ",
 };

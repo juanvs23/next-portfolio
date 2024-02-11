@@ -17,16 +17,16 @@ export default function ProjectsComponent() {
         data-aos-anchor-placement="top-center"
       >
         <div className="container">
-          <div className="w-full">
-            <div className="flex justify-center">
+          <div className="w-full md:flex gap-3">
+            <div className="flex justify-center w-full md:w-4/12 lg:w-6/12 xl:w-2/6">
               <h2 className="glitch text-titleMobile lg:text-titledesktop xl:text-xtratitle 2xl:text-maxtitle font-bold">
                 <span aria-hidden="true">{title}</span>
                 {title}
                 <span aria-hidden="true">{title}</span>
               </h2>
             </div>
-            <div className="container flex justify-center">
-              <div className="w-full md:w-3/6 lg:w-full container">
+            <div className="container flex justify-center overflow-hidden md:w-8/12 lg:w-6/12 xl:w-4/6">
+              <div className="w-full  container">
                 <ProjectContainer projects={projectsItems} />
               </div>
             </div>

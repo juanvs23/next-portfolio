@@ -23,7 +23,7 @@ export default function WorksComponent() {
       >
         <div className="container">
           <div className="w-full flex flex-col md:flex-row">
-            <div className="flex flex-col gap-3 justify-center md:justify-start p-4 md:w-5/12  lg:w-6/12">
+            <div className="flex flex-col gap-3 justify-center md:justify-start p-1 md:p-4 md:w-5/12  lg:w-6/12">
               <h2 className=" glitch text-titleMobile lg:text-titledesktop xl:text-xtratitle 2xl:text-maxtitle font-bold">
                 <span aria-hidden="true">{title}</span>
                 {title}

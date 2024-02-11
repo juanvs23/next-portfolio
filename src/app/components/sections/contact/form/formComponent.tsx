@@ -12,7 +12,7 @@ import "./index.scss";
 import { FormInterface, Status } from "@/types";
 import type HCaptcha from "@hcaptcha/react-hcaptcha/types/index.d.ts";
 
-import { initialForm } from "@/app/constants";
+import { formMessage, initialForm } from "@/app/constants";
 
 export default function FormComponent() {
   const nameRef = useRef<HTMLInputElement>(null);
@@ -109,14 +109,14 @@ export default function FormComponent() {
       }
       const newInputs = inputs.map((input) => {
         if (input.inputValue.length === 0) {
-          input.inputError = "This field is required";
+          input.inputError = formMessage.errors.field;
         }
         if (input.name == "phone" && phone.length < 8) {
           // console.log(input.inputValue);
-          input.inputError = "Please enter a valid phone number";
+          input.inputError = formMessage.errors.phone;
         }
         if (input.name == "email" && !regexEmail.test(input.inputValue)) {
-          input.inputError = "Please enter a valid email";
+          input.inputError = formMessage.errors.email;
         }
         return input;
       });
@@ -160,18 +160,15 @@ export default function FormComponent() {
             .then((res) => res.json())
             .then((data) => {
               console.log(data);
-              toast.success(
-                "Message sent successfully, I will contact you as soon as possible",
-                {
-                  position: "top-center",
-                  autoClose: false,
-                  hideProgressBar: false,
-                  closeOnClick: true,
-                  pauseOnHover: true,
-                  draggable: true,
-                  theme: "colored",
-                }
-              );
+              toast.success(formMessage.success, {
+                position: "top-center",
+                autoClose: false,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                theme: "colored",
+              });
               setFormData({
                 status: data.status,
                 message: data.message,
@@ -182,18 +179,15 @@ export default function FormComponent() {
               el.reset();
             })
             .catch((error) => {
-              toast.error(
-                "Please try again... Later, Sorry. Contact me by email on my footer",
-                {
-                  position: "top-center",
-                  autoClose: false,
-                  hideProgressBar: false,
-                  closeOnClick: true,
-                  pauseOnHover: true,
-                  draggable: true,
-                  theme: "colored",
-                }
-              );
+              toast.error(formMessage.error, {
+                position: "top-center",
+                autoClose: false,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                theme: "colored",
+              });
               setFormData({
                 status: error.status,
                 message: error.message,

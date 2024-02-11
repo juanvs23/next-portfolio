@@ -2,6 +2,7 @@ import { ProjectItem } from "@/types";
 import Image from "next/image";
 import React from "react";
 import "./styles.scss";
+
 /**
  * Render a project item component.
  *
@@ -15,6 +16,7 @@ import "./styles.scss";
 
 function ProyectItemComponent({ data }: { data: ProjectItem }) {
   const { id, name, url, description, img } = data;
+
   return (
     <article className="projectItem" style={{ overflow: "hidden" }}>
       <div className="project-overlay"></div>
@@ -23,7 +25,7 @@ function ProyectItemComponent({ data }: { data: ProjectItem }) {
         alt={name}
         width={650}
         height={760}
-        className="image-bg"
+        className="image-bg object-cover"
       />
       <h3 className="projectname">{name}</h3>
       <div className="button-container">

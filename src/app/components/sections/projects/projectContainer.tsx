@@ -1,7 +1,8 @@
 "use client";
 import { ProjectItem } from "@/types";
 import { useRef, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide, useSwiperSlide, useSwiper } from "swiper/react";
+import { Icons } from "@/app/components";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
@@ -16,6 +17,8 @@ import ProyectItemComponent from "./projectItem/proyectItem";
 function ProjectContainer({ projects }: { projects: ProjectItem[] }) {
   const nextButton = useRef<HTMLDivElement>(null);
   const prevButton = useRef<HTMLDivElement>(null);
+  const swiperSlide = useSwiperSlide();
+  const useswiper = useSwiper();
   const [prevEl, setPrevEl] = useState<HTMLElement | null>(null);
   const [nextEl, setNextEl] = useState<HTMLElement | null>(null);
   const projectList = projects.sort((a, b) => {
@@ -31,31 +34,30 @@ function ProjectContainer({ projects }: { projects: ProjectItem[] }) {
     nextEl,
     prevEl,
   };
+  console.log(useswiper);
   return (
-    <div className="projectSlider">
+    <div className="projectSlider relative">
       <Swiper
-        effect={"coverflow"}
-        grabCursor={true}
-        centeredSlides={true}
         slidesPerView={3}
-        coverflowEffect={{
-          rotate: 30,
-          stretch: 10,
-          depth: 10,
-          modifier: 1,
-          slideShadows: true,
-        }}
+        spaceBetween={20}
         breakpoints={{
           0: {
             slidesPerView: 1,
           },
-          1024: {
-            slidesPerView: 3,
+          767: {
+            slidesPerView: 1,
+          },
+          1023: {
+            slidesPerView: 1,
+          },
+          1279: {
+            slidesPerView: 2,
+            spaceBetween: 10,
           },
         }}
-        loop={true}
         navigation={navigationOptions}
         //pagination={true}
+
         modules={[EffectCoverflow, Navigation]}
         className="projects-container"
       >
@@ -65,8 +67,22 @@ function ProjectContainer({ projects }: { projects: ProjectItem[] }) {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="section-button-prev" ref={(node) => setPrevEl(node)} />
-      <div className="section-button-next" ref={(node) => setNextEl(node)} />
+      <div
+        className="project-button-prev absolute top-1/2 cursor-pointer z-50 rotate-180 hover:opacity-70"
+        ref={(node) => {
+          setPrevEl(node);
+        }}
+      >
+        <Icons.IconPlay color="#007aff" size={"40"} />
+      </div>
+      <div
+        className="project-button-next absolute top-1/2 cursor-pointer z-50 right-0 hover:opacity-70"
+        ref={(node) => {
+          setNextEl(node);
+        }}
+      >
+        <Icons.IconPlay color="#007aff" size={"40"} />
+      </div>
     </div>
   );
 }

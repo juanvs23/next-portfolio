@@ -9,4 +9,7 @@
   @media (max-width: 767px) {
     max-width: 87%;
   }
+  .swiper-button-disabled {
+    opacity: 0;
+  }
 }

@@ -9,6 +9,15 @@ aside.networks {
     width: 100%;
     right: 0;
     background: rgb(31 41 55 / 1);
+    .networks-container {
+      a {
+        padding: 10px;
+        svg {
+          width: 40px;
+          height: 40px;
+        }
+      }
+    }
   }
   h3.our-network {
     text-orientation: use-glyph-orientation;
