@@ -159,6 +159,7 @@ export default function FormComponent() {
           })
             .then((res) => res.json())
             .then((data) => {
+              console.log(data);
               toast.success(
                 "Message sent successfully, I will contact you as soon as possible",
                 {

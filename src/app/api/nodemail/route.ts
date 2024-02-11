@@ -5,6 +5,7 @@ import { NextResponse } from "next/server";
 import { Status } from "@/types";
 import { EmailTemplate } from "@/app/components/emailTemplate";
 
+const resend = new Resend(process.env.RESEND_API_KEY);
 export async function POST(request: Request) {
   const emailAccount = process.env.EMAIL_ACCOUNT;
   /*const password = process.env.EMAIL_PASSWORD; */
@@ -82,7 +83,6 @@ export async function POST(request: Request) {
   /**
    * Chance for resend
    */
-  const resend = new Resend(process.env.RESEND_API_KEY);
   try {
     const email = await resend.emails.send({
       from: "Acme <onboarding@resend.dev>",
