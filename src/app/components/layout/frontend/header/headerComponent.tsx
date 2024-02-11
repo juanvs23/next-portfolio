@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import { BiHomeAlt } from "@react-icons/all-files/bi/BiHomeAlt";
 import "./index.scss";
 import Link from "next/link";
 import Networks from "@/app/components/networks/networks";
