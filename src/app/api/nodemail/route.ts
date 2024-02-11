@@ -84,7 +84,7 @@ export async function POST(request: Request) {
    */
   const resend = new Resend(process.env.RESEND_API_KEY);
   try {
-    const mail = await resend.emails.send({
+    const email = await resend.emails.send({
       from: "Acme <onboarding@resend.dev>",
       to: [emailAccount || "juanvs23@gmail.com"],
       subject: `${data.inputs[3].inputValue}`,
@@ -98,14 +98,7 @@ export async function POST(request: Request) {
       }) as React.ReactElement,
     });
 
-    return NextResponse.json(
-      {
-        status: Status.succeeded,
-        message:
-          "Message sent successfully, I will contact you as soon as possible",
-      },
-      { status: 200 }
-    );
+    return Response.json({ email });
   } catch (error) {
     return NextResponse.json(
       {

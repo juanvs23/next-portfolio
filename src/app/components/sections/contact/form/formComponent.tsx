@@ -159,15 +159,18 @@ export default function FormComponent() {
           })
             .then((res) => res.json())
             .then((data) => {
-              toast.success(data.message, {
-                position: "top-center",
-                autoClose: false,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                theme: "colored",
-              });
+              toast.success(
+                "Message sent successfully, I will contact you as soon as possible",
+                {
+                  position: "top-center",
+                  autoClose: false,
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  pauseOnHover: true,
+                  draggable: true,
+                  theme: "colored",
+                }
+              );
               setFormData({
                 status: data.status,
                 message: data.message,
@@ -178,15 +181,18 @@ export default function FormComponent() {
               el.reset();
             })
             .catch((error) => {
-              toast.error(error.message, {
-                position: "top-center",
-                autoClose: false,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                theme: "colored",
-              });
+              toast.error(
+                "Please try again... Later, Sorry. Contact me by email on my footer",
+                {
+                  position: "top-center",
+                  autoClose: false,
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  pauseOnHover: true,
+                  draggable: true,
+                  theme: "colored",
+                }
+              );
               setFormData({
                 status: error.status,
                 message: error.message,
