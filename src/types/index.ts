@@ -1,4 +1,5 @@
 import nodemailer from "nodemailer";
+import { ElementType } from "react";
 export interface ItemView {
   title: string;
   class: string;
@@ -6,7 +7,7 @@ export interface ItemView {
 }
 export interface CardSkill {
   title: string;
-  icon: React.ReactNode;
+  icon: React.ReactNode | ElementType;
   points: string[];
   color: string;
 }
@@ -19,7 +20,6 @@ export interface JobItem {
   };
   company: string;
   description: string;
-  tools: JobToolItem[];
 }
 export interface JobToolItem {
   id: number;
@@ -40,6 +40,36 @@ export enum Status {
   failed = "failed",
   error = "error",
 }
+export interface NetworkItem {
+  name: string;
+  link: string;
+  icon: string;
+  color: string;
+}
+export interface SocialNetWorksInterface {
+  title: string;
+  netWorks: NetworkItem[];
+}
+export interface EmailMe {
+  emailTitle: string;
+  hoverTitle: string;
+  clickedTitle: string;
+  email: string;
+  icons: {
+    initialIcon: string;
+    hoverIcon: string;
+    clickedIcon: string;
+  };
+}
+export interface ContactUsInterface {
+  title: string;
+  subtitle: string;
+  formTitle: string;
+  emailData: EmailMe;
+  form: FormInterface;
+  networks: SocialNetWorksInterface;
+}
+
 export interface FormInterface {
   status: Status;
   message: string;

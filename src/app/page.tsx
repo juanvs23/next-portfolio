@@ -1,4 +1,13 @@
+import { Metadata } from "next";
 import { GlassComponents, Sections, VideoBg } from "./components";
+
+export const metadata: Metadata = {
+  title: "Juan C. Avila | Portfolio",
+  description: "This is my portfolio website created with Next.js",
+  icons: {
+    icon: [{ url: "/img/email-icon.png", type: "image/png" }],
+  },
+};
 
 export default function Home() {
   return (
@@ -14,7 +23,7 @@ export default function Home() {
       <section id="about" className="z-10">
         <Sections.About />
         <GlassComponents gbColor="linear-gradient(135deg, rgb(68, 68, 68), rgb(4 37 46 / 80%))" />
-        <VideoBg videoUrl="/videos/about.mp4" />
+        {/*  <VideoBg videoUrl="/videos/about.mp4" /> */}
       </section>
       <section
         id="works"
@@ -22,7 +31,7 @@ export default function Home() {
       >
         <Sections.Works />
         <GlassComponents gbColor="linear-gradient(135deg, #444, rgb(8 49 72 / 80%))" />
-        <VideoBg videoUrl="/videos/writting.mp4" />
+        {/*  <VideoBg videoUrl="/videos/writting.mp4" /> */}
       </section>
       <section
         id="projects"
@@ -30,12 +39,12 @@ export default function Home() {
       >
         <Sections.Projects />
         <GlassComponents gbColor="linear-gradient(135deg, #444, rgb(6 27 51 / 50%));" />
-        <VideoBg
+        {/*  <VideoBg
           videoUrl={[
             { type: "video/webm", url: "/videos/code.webm" },
             { type: "video/mp4", url: "/videos/code.mp4" },
           ]}
-        />
+        /> */}
       </section>
       <section
         id="contact"
@@ -43,7 +52,7 @@ export default function Home() {
       >
         <Sections.Contact />
         <GlassComponents gbColor="linear-gradient(135deg, #444, rgb(4 48 51 / 50%))" />
-        <VideoBg videoUrl="/videos/mailarroba.mp4" />
+        {/*  <VideoBg videoUrl="/videos/mailarroba.mp4" /> */}
       </section>
     </>
   );

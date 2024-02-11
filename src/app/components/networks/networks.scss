@@ -3,15 +3,30 @@ aside.networks {
   right: 19px;
   z-index: 999999;
   top: 25%;
+  @media (max-width: 767px) {
+    bottom: 0;
+    top: auto;
+    width: 100%;
+    right: 0;
+    background: rgb(31 41 55 / 1);
+  }
   h3.our-network {
     text-orientation: use-glyph-orientation;
     writing-mode: vertical-rl;
     margin: 0;
     line-height: 2;
+    @media (max-width: 767px) {
+      display: none;
+    }
   }
   .networks-container {
     display: flex;
     flex-direction: column;
+    @media (max-width: 767px) {
+      flex-direction: row;
+      margin-top: 0;
+      justify-content: space-around;
+    }
     gap: 7px;
     font-size: 1.2rem;
     justify-content: center;
@@ -21,6 +36,10 @@ aside.networks {
       transition: 0.5s;
       i {
         transition: 0.5s;
+        @media (max-width: 767px) {
+          font-size: 2rem;
+          padding: 11px;
+        }
       }
       &:hover {
         i {

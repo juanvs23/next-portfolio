@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import { SwiperSlide } from "swiper/react";
 import Atropos from "atropos/react";
 import "atropos/atropos.css";
 const ViewAbout = () => {

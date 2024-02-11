@@ -1,5 +1,4 @@
 import { ProjectItem } from "@/types";
-import Atropos from "atropos/react";
 import Image from "next/image";
 import React from "react";
 import "./styles.scss";
@@ -17,29 +16,27 @@ import "./styles.scss";
 function ProyectItemComponent({ data }: { data: ProjectItem }) {
   const { id, name, url, description, img } = data;
   return (
-    <Atropos>
-      <article className="projectItem">
-        <div className="project-overlay"></div>
-        <Image
-          src={img}
-          alt={name}
-          width={650}
-          height={760}
-          className="image-bg"
-        />
-        <h3 className="projectname">{name}</h3>
-        <div className="button-container">
-          <a
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="projectLink"
-          >
-            View Page
-          </a>
-        </div>
-      </article>
-    </Atropos>
+    <article className="projectItem" style={{ overflow: "hidden" }}>
+      <div className="project-overlay"></div>
+      <Image
+        src={img}
+        alt={name}
+        width={650}
+        height={760}
+        className="image-bg"
+      />
+      <h3 className="projectname">{name}</h3>
+      <div className="button-container">
+        <a
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="projectLink"
+        >
+          View Page
+        </a>
+      </div>
+    </article>
   );
 }
 

@@ -1,30 +1,30 @@
 import { FormInterface, ProjectSectionType, Status } from "@/types";
-
+const email = process.env.NEXT_PUBLIC_EMAIL;
 export const socialNetWorks = {
   title: "Follow me",
   netWorks: [
     {
       name: "Github",
       link: "https://github.com/juanvs23",
-      icon: "fa-brands fa-github",
+      icon: "github",
       color: "#000",
     },
     {
       name: "Facebook",
       link: "https://www.facebook.com/juancarlos.avila.1420/",
-      icon: "fa-brands  fa-facebook",
+      icon: "facebook",
       color: "#3b5998",
     },
     {
       name: "Linkedin",
       link: "https://www.linkedin.com/in/juanvs23/",
-      icon: "fa-brands fa-linkedin",
+      icon: "linkedin",
       color: "#0077b5",
     },
     {
       name: "X",
       link: "https://twitter.com/juanvs23",
-      icon: "fa-brands fa-x-twitter",
+      icon: "twitter",
       color: "#1da1f2",
     },
   ],
@@ -42,13 +42,6 @@ export const jobs = {
       company: "TREMGROUP LLC",
       description:
         "Creation of user interfaces for the Company Project (IDXBOOST) and the company's clients, high level Realtor for the North American market. In addition to the development of solutions, such ascreation of CTP, admin page, custom fields among other WordPress techniques ",
-      tools: [
-        { id: 1, title: "Wordpress", icon: "fa-wordpress" },
-        { id: 2, title: "CSS", icon: "fa-css3" },
-        { id: 3, title: "HTML5", icon: "fa-html5" },
-        { id: 4, title: "JavaScript", icon: "fa-js" },
-        { id: 5, title: "React", icon: "fa-react" },
-      ],
     },
     {
       id: 2,
@@ -60,13 +53,6 @@ export const jobs = {
       company: "Conocimiento Corporativo S.A.S",
       description:
         "Develop WordPress sites, creating plugins and custom fields for custom themes, for institutional sites among which are CESDE and Thinkus",
-      tools: [
-        { id: 1, title: "Wordpress", icon: "fa-wordpress" },
-        { id: 2, title: "CSS", icon: "fa-css3" },
-        { id: 3, title: "HTML5", icon: "fa-html5" },
-        { id: 4, title: "JavaScript", icon: "fa-js" },
-        { id: 5, title: "React", icon: "fa-react" },
-      ],
     },
     {
       id: 3,
@@ -78,66 +64,39 @@ export const jobs = {
       company: "Nivelics SAS",
       description:
         "Develop and maintain WordPress sites, both in the creation of interfaces for the client, and for the dashboard. Creation of custom plugins and themes for advertising sites or ecommerce of the clientele.",
-      tools: [
-        { id: 1, title: "Wordpress", icon: "fa-wordpress" },
-        { id: 2, title: "CSS", icon: "fa-css3" },
-        { id: 3, title: "HTML5", icon: "fa-html5" },
-        { id: 4, title: "JavaScript", icon: "fa-js" },
-        { id: 5, title: "React", icon: "fa-react" },
-      ],
     },
     {
       id: 4,
-      title: "Wordpress Developer",
+      title: "Wordpress Developer/Front-End Developer",
       date: {
-        startDate: new Date(2020, 4),
+        startDate: new Date(2020, 3),
         endDate: new Date(2021, 6),
       },
       company: "ZtGroup LLC",
       description:
         "Develop and maintain WordPress sites, both in the creation of interfaces for the client, and for the dashboard. Creation of custom plugins and themes for advertising sites or ecommerce of the clients",
-      tools: [
-        { id: 1, title: "Wordpress", icon: "fa-wordpress" },
-        { id: 2, title: "CSS", icon: "fa-css3" },
-        { id: 3, title: "HTML5", icon: "fa-html5" },
-        { id: 4, title: "JavaScript", icon: "fa-js" },
-        { id: 5, title: "React", icon: "fa-react" },
-      ],
     },
     {
       id: 5,
       title: "Hispano Soluciones",
       date: {
-        startDate: new Date(2019, 7),
-        endDate: new Date(2020, 3),
+        startDate: new Date(2019, 10),
+        endDate: new Date(2020, 2),
       },
-      company: "ZtGroup LLC",
+      company: "Hispano Soluciones CA",
       description:
         "Develop interfaces for client projects in Drupal, WordPress and layout for static sites",
-      tools: [
-        { id: 1, title: "Wordpress", icon: "fa-wordpress" },
-        { id: 2, title: "CSS", icon: "fa-css3" },
-        { id: 3, title: "HTML5", icon: "fa-html5" },
-        { id: 4, title: "JavaScript", icon: "fa-js" },
-        { id: 5, title: "React", icon: "fa-react" },
-      ],
     },
     {
       id: 6,
       title: "Frontend Developer",
       date: {
         startDate: new Date(2018, 7),
-        endDate: new Date(2019, 6),
+        endDate: new Date(2019, 10),
       },
       company: "Nacion Digital",
       description:
         "Develop interfaces for client projects in Drupal, WordPress and layout for static sites",
-      tools: [
-        { id: 2, title: "CSS", icon: "fa-css3" },
-        { id: 3, title: "HTML5", icon: "fa-html5" },
-        { id: 4, title: "JavaScript", icon: "fa-js" },
-        { id: 5, title: "React", icon: "fa-react" },
-      ],
     },
   ],
 };
@@ -293,4 +252,25 @@ export const initialForm: FormInterface = {
       active: false,
     },
   ],
+};
+//<i class="fa-solid fa-envelope-open"></i>
+//<i class="fa-solid fa-envelope-open-text"></i>
+//<i class="fa-solid fa-envelope"></i>
+export const contactUs = {
+  title: "Contact me",
+  subtitle: "Send me a message",
+  formTitle: "Please fill in the form below",
+  emailData: {
+    title: "Send me an email",
+    hoverTitle: "Click me to send",
+    clickedTitle: "Thank you for contacting me",
+    email: email,
+    icons: {
+      initialIcon: "fa-solid fa-envelope-open",
+      hoverIcon: "fa-solid fa-envelope-open-text",
+      clickedIcon: "fa-solid fa-envelope",
+    },
+  },
+  form: initialForm,
+  networks: socialNetWorks,
 };
