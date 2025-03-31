@@ -3,21 +3,21 @@ import FormComponent from "./form/formComponent";
 import "./index.scss";
 import { useEffect } from "react";
 import AOS from "aos";
-import { contactUs } from "@/app/constants";
-import Sending from "./sending/sending";
+import { useContactUs } from "@/app/constants";
+
 // Add in new releases
 import { ToastContainer } from "react-toastify";
 import { EmailMe } from "@/types/index";
 
 export default function ContactComponent() {
-  const contact = contactUs;
-  const { title, hoverTitle, clickedTitle, icons, email } = contact.emailData;
+  const contact = useContactUs();
+  
   useEffect(() => {
     AOS.init();
   }, []);
   return (
     <>
-      <ToastContainer />
+      
       <div
         className="container p-3  w-full z-10 flex justify-center"
         data-aos="fade-up"

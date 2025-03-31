@@ -1,26 +1,23 @@
 "use client";
-import { jobs } from "@/app/constants";
+import { useJobs } from "@/app/constants";
 import "./index.scss";
 import JobContainer from "./jobs/jobContainer";
 import { useEffect } from "react";
 import Aos from "aos";
 import Image from "next/image";
-import WebJob from "/public/web-desing-job.svg";
+import WebJob from "../../../../../public/web-desing-job.svg";
 
 export default function WorksComponent() {
-  const { title, jobsItems } = jobs;
-  const newJob = jobsItems.sort(
+  const { title, jobsItems } = useJobs();
+  const newJob = jobsItems.toSorted(
     (a, b) => b.date.startDate.getFullYear() - a.date.startDate.getFullYear()
   );
   useEffect(() => {
     Aos.init();
   }, []);
   return (
-    <>
-      <div
-        className="container p-3  w-full z-10 flex md:justify-end"
-        data-aos="zoom-in"
-      >
+   
+      <div className="container p-3  w-full z-10 flex md:justify-end" data-aos="zoom-in">
         <div className="container">
           <div className="w-full flex flex-col md:flex-row">
             <div className="flex flex-col gap-3 justify-center md:justify-start p-1 md:p-4 md:w-5/12  lg:w-6/12">
@@ -49,6 +46,6 @@ export default function WorksComponent() {
           </div>
         </div>
       </div>
-    </>
+   
   );
 }

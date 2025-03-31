@@ -12,9 +12,10 @@ import "./index.scss";
 import { FormInterface, Status } from "@/types";
 import type HCaptcha from "@hcaptcha/react-hcaptcha/types/index.d.ts";
 
-import { formMessage, initialForm } from "@/app/constants";
+import {  initialForm, useFormMessage } from "@/app/constants";
 
 export default function FormComponent() {
+  const formMessage = useFormMessage();
   const nameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
   const phoneRef = useRef<HTMLInputElement>(null);

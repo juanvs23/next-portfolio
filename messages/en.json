@@ -1,0 +1,100 @@
+{
+    "social":{
+        "title": "Follow me"
+    },
+    "about": {
+        "title": "ABOUT ME",
+        "description": "Hello! I'm Juan Carlos Ávila, a Full Stack Developer with 5+ years of experience in technologies like JavaScript (React, Node.js), PHP, and WordPress, plus knowledge of Python, Linux server administration and Node.js development.  Beyond my professional work, I'm deeply passionate about technology as a hobby, constantly exploring new tools and working on personal projects. <br/><br/> Specialized in building scalable web applications, API integrations (PayPal, Stripe, Google) and custom solutions for e-commerce and institutional websites. Passionate about clean code, performance optimization and continuous learning. Experienced in both team collaboration and autonomous projects, delivering robust and efficient products."
+    },
+    "jobs":{
+        "title": "Work Experience"
+       
+    },
+    "ama": {
+        "id": 1,
+        "title": "WordPress Developer - Fullstack",
+        "start": "2024-8",
+        "end": "2025-4",
+        "company": "Addiction Marketing Agency",
+        "description": "Implemented a LAMP server in the cloud to host multiple WordPress projects. Developed a high-performance directory with custom post types, advanced taxonomies, and SEO-optimized meta content, using native PHP and JavaScript. Built various sites with extensive content, prioritizing speed and organic ranking."
+    },
+    "ciancoder":{
+        "id": 2,
+        "title": "Freelance Developer - WordPress",
+        "start": "2024-5",
+        "end": "2024-8",
+        "company": "Ciancoders",
+        "description": "Developed two WordPress platforms from scratch: an informational page and a ticket sales system. Implemented CPTs, custom fields, and taxonomies with native PHP (no plugins). For the frontend, used vanilla JavaScript (ES6+) and modern CSS (Grid/Flexbox), creating dynamic components optimized for performance and user experience. These projects were Dockerized and deployed to a Linux server via GIT over SSH."
+    },
+    "tremgroup": {
+        "id": 3,
+        "title": "Fullstack/PHP Developer - JavaScript",
+        "start": "2022-8",
+        "end": "2024-4",
+        "company": "TREMGROUP LLC",
+        "description": "Developed interactive React.js components for visualizing real estate statistics in Miami. Maintained and optimized legacy websites (8+ years old), modernizing their code and adding features. Created custom solutions with WordPress, Next.js, and React, including Google Maps API integrations for filtering properties by price and profitability."
+    },
+    "conocimiento": {
+        "id": 4,
+        "title": "Front-end/WordPress Developer",
+        "start": "2021-12",
+        "end": "2022-6",
+        "company": "Conocimiento Corporativo S.A.S",
+        "description": "Developed custom WordPress solutions from scratch, creating native themes and plugins with PHP. Implemented advanced content systems using custom post types, tailored taxonomies, and custom fields (without plugins like ACF), optimized for sectors like education and security. Each project was built with clean, scalable code to ensure high performance and easy maintenance."
+    },
+    "nivelics": {
+        "id": 5,
+        "title": "WordPress Developer",
+        "start": "2021-6",
+        "end": "2021-11",
+        "company": "Nivelics SAS",
+        "description": "Developed and maintained WordPress sites, including client-facing interfaces and dashboards. Created custom plugins and themes for advertising or e-commerce sites for clients. Built APIs with Node.js."
+    },
+    "ztgroup":{
+        "id": 6,
+        "title": "Front-end/WordPress Developer",
+        "start": "2020-3",
+        "end": "2021-6",
+        "company": "ZtGroup LLC",
+        "description": "Developed and maintained WordPress sites, including client-facing interfaces and dashboards. Created custom plugins and themes for advertising or e-commerce sites for clients."
+    },
+    "hispano": {
+        "id": 7,
+        "title": "Front-End Developer",
+        "start": "2018-3",
+        "end": "2020-1",
+        "company": "Hispano Soluciones CA",
+        "description": "Developed interfaces for client projects in Drupal, WordPress, and static site layouts."
+    },
+    "menu":{
+        "home": "Home",
+        "about": "About",
+        "works": "Work Experience",
+        "projects": "Projects",
+        "contact": "Contact"
+    },
+    "contactUs":{
+        "title": "Contact me",
+        "subtitle": "Send me a message",
+        "formTitle": "Please fill in the form below"
+    },
+    "emailData":{
+        "title": "Send me an email",
+        "hoverTitle": "Click me to send",
+        "clickedTitle": "Thank you for contacting me"
+    },
+    "formMessage":{
+        "success": "Message sent successfully",
+        "error": "Please try again... Later, Sorry. Contact me by email on my footer",
+        "sending": "Sending message"
+    },
+    "formMessageErrors":{
+        "field": "This field is required",
+        "phone": "Please enter a valid phone number",
+        "email": "Please enter a valid email"
+    },
+    "footer":{
+        "develop": "Develop by ",
+        "copy": "Copyright © "
+    }
+}

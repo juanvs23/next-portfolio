@@ -1,34 +1,38 @@
+import {useLocale} from 'next-intl';
 import { JobItem } from "@/types";
 import React from "react";
 import "./jobComponent.scss";
 
 export default function JobComponent({ job }: { job: JobItem }) {
+  const locale = useLocale();
+  console.log(locale);
   const {
     title,
     date: { startDate, endDate },
     company,
     description,
   } = job;
-  const months = [
-    "Jan",
+  const months =  locale === "en" ? ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"] : [
+    "Ene",
     "Feb",
     "Mar",
-    "Apr",
+    "Abr",
     "May",
     "Jun",
     "Jul",
-    "Aug",
+    "Ago",
     "Sep",
     "Oct",
     "Nov",
-    "Dec",
+    "Dic",
   ];
+  const present = locale === "en" ? "Present" : "Presente";
   const showStartDate = `${
     months[startDate.getMonth()]
   }/${startDate.getFullYear()}`;
   const showEndDate = endDate
     ? `${months[endDate.getMonth()]}/${endDate.getFullYear()}`
-    : "Present";
+    : present;
   const defineColor = (id: number) => {
     if (id % 2 === 0) {
       return "bg-blue-600";

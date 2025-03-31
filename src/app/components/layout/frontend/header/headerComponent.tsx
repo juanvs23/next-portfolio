@@ -3,8 +3,10 @@ import { useState } from "react";
 import "./index.scss";
 import Link from "next/link";
 import Networks from "@/app/components/networks/networks";
+import { useTranslations } from "next-intl";
 
 export default function HeaderComponent() {
+  const menuName =  useTranslations("menu");
   const [activeMenu, setactiveMenu] = useState<boolean>(false);
   const handleMenu = () => {
     setactiveMenu((activeMenu) => !activeMenu);
@@ -13,7 +15,16 @@ export default function HeaderComponent() {
   const openMenu = !activeMenu ? "Open here" : "Close here";
   return (
     <nav className={activeClass}>
-      <div title="Home" className="pie pie1" onClick={() => handleMenu()}>
+      <div
+        title={menuName('home')}
+        className="pie pie1"
+        role="button"
+        tabIndex={0}
+        onClick={() => handleMenu()}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") handleMenu();
+        }}
+      >
         <Link href="/#home">
           <div className="pie-color pie-color1">
             <svg
@@ -30,7 +41,7 @@ export default function HeaderComponent() {
           </div>
         </Link>
       </div>
-      <div title="About" className="pie pie2" onClick={() => handleMenu()}>
+      <div title={menuName('about')} className="pie pie2" onClick={() => handleMenu()}>
         <Link href="/#about">
           <div className="pie-color pie-color2">
             <svg
@@ -47,7 +58,7 @@ export default function HeaderComponent() {
           </div>
         </Link>
       </div>
-      <div title="Works" className="pie pie3" onClick={() => handleMenu()}>
+      <div title={menuName('works')} className="pie pie3" onClick={() => handleMenu()}>
         <Link href="/#works">
           <div className="pie-color pie-color3">
             <svg
@@ -65,7 +76,7 @@ export default function HeaderComponent() {
           </div>
         </Link>
       </div>
-      <div title="Projects" className="pie pie4" onClick={() => handleMenu()}>
+      <div title={menuName('projects')} className="pie pie4" onClick={() => handleMenu()}>
         <Link href="/#projects">
           <div className="pie-color pie-color4">
             <svg
@@ -82,7 +93,7 @@ export default function HeaderComponent() {
           </div>
         </Link>
       </div>
-      <div title="Contact" className="pie  pie5" onClick={() => handleMenu()}>
+      <div title={menuName('contact')} className="pie  pie5" onClick={() => handleMenu()}>
         <Link href="/#contact">
           <div className="pie-color pie-color5">
             <svg

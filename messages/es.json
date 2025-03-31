@@ -1,0 +1,99 @@
+{
+    "social":{
+        "title": "Sígueme"
+    },
+    "about": {
+        "title": "CONÓCEME",
+        "description": "¡Hola! Soy Juan Carlos Ávila, Desarrollador Full Stack con 5+ años de experiencia en tecnologías como JavaScript (React, Node.js), PHP y WordPress, complementados con conocimientos en Python, administración de servidores Linux y desarrollo con Node.js. Fuera del trabajo, mi pasión por la tecnología se extiende a mis hobbies, donde disfruto experimentando con nuevas herramientas y desarrollando proyectos personales. <br/><br/> Especializado en crear aplicaciones web escalables, integraciones con APIs (PayPal, Stripe, Google) y soluciones personalizadas para e-commerce y sitios institucionales.  Apasionado por el código limpio, la optimización de rendimiento y el aprendizaje continuo. Experiencia trabajando en equipo y en proyectos autónomos, entregando productos robustos y eficientes."
+    },
+    "jobs":{
+        "title": "Experiencia Laboral"
+    },
+    "ama": {
+        "id": 1,
+        "title": "Desarrollador Wordpress - Fullstack",
+        "start": "2024-8",
+        "end": "2025-4",
+        "company": "Addiction Marketing Agency",
+        "description": "Implementé un servidor LAMP en la nube para alojar múltiples proyectos WordPress. Desarrollé un directorio de alto rendimiento con tipos de contenido personalizados, taxonomías avanzadas y metacontenido optimizado para SEO, utilizando PHP nativo y JavaScript. Creé diversos sitios con contenido extenso, priorizando velocidad y posicionamiento orgánico."
+    },
+    "ciancoder":{
+        "id": 2,
+        "title": "Desarrollador Freelancer - WordPress",
+        "start": "2024-5",
+        "end": "2024-8",
+        "company": "Ciancoders",
+        "description": "Desarrollé dos plataformas WordPress desde cero: una página informativa y un sistema de venta de tickets. Implementé CPTs, campos personalizados y taxonomías con PHP nativo (sin plugins). Para el frontend usé JavaScript vanilla (ES6+) y CSS moderno (Grid/Flexbox), creando componentes dinámicos optimizados para rendimiento y experiencia de usuario. Estos proyectos se realizaron en un ambiente Dockerizado y subidos a un servidor de linux mediante GIT por SSH."
+    },
+    "tremgroup": {
+        "id": 3,
+        "title": "Desarrollador Fullstack/PHP - JavaScript",
+        "start": "2022-8",
+        "end": "2024-4",
+        "company": "TREMGROUP LLC",
+        "description": "Desarrollé componentes interactivos en React.js para visualización de datos estadísticos de valores inmobiliarios en Miami. Mantuve y optimicé sitios web legacy (8+ años), modernizando su código y añadiendo funcionalidades. Creé soluciones personalizadas con WordPress, Next.js y React, destacando la integración de Google Maps API para sistemas de filtrado de propiedades por precio y rentabilidad."
+    },
+    "conocimiento": {
+        "id": 4,
+        "title": "Desarrollador Front-end/WordPress",
+        "start": "2021-12",
+        "end": "2022-6",
+        "company": "Conocimiento Corporativo S.A.S",
+        "description": "Desarrollé soluciones WordPress personalizadas desde cero, creando themes y plugins nativos con PHP. Implementé sistemas de contenido avanzado mediante tipos de contenido personalizados, taxonomías a medida y campos personalizados (sin plugins como ACF), optimizados para diversos sectores como educación y seguridad. Cada proyecto se construyó con código limpio y escalable, garantizando alto rendimiento y fácil mantenimiento."
+    },
+    "nivelics": {
+        "id": 5,
+        "title": "Desarrollador WordPress",
+        "start": "2021-6",
+        "end": "2021-11",
+        "company": "Nivelics SAS",
+        "description": "Desarrollar y mantener sitios en WordPress, tanto en la creación de las interfaces para el cliente, como para el dashboard. Creación de Plugins y themes a medida para sitios publicitarios o ecommerce de la clientela. Creación de API con Nodejs"
+    },
+    "ztgroup":{
+        "id": 6,
+        "title": "Desarrollador Front-end/WordPress",
+        "start": "2020-3",
+        "end": "2021-6",
+        "company": "ZtGroup LLC",
+        "description": "Desarrollar y mantener sitios en WordPress, tanto en la creación de las interfaces para el cliente, como para el dashboard. Creación de Plugins y themes a medida para sitios publicitarios o ecommerce de la clientela"
+    },
+    "hispano": {
+        "id": 7,
+        "title": "Front-End Developer",
+        "start": "2018-3",
+        "end": "2020-1",
+        "company": "Hispano Soluciones CA",
+        "description": "Desarrollar interfaces para proyectos de clientes en Drupal, WordPress y maquetación para sitios estáticos"
+    },
+    "menu":{
+        "home": "Inicio",
+        "about": "Acerca de mí",
+        "works": "Experiencia Laboral",
+        "projects": "Proyectos",
+        "contact": "Contacto"
+    },
+    "contactUs":{
+        "title": "Contáctame",
+        "subtitle": "Envíame un mensaje",
+        "formTitle": "Por favor completa el formulario a continuación"
+    },
+    "emailData":{
+        "title": "Contáctame",
+        "hoverTitle": "Haz clic para enviar",
+        "clickedTitle": "Gracias por contactarme"
+    },
+    "formMessage":{
+        "success": "Mensaje enviado con éxito",
+        "error": "Error al enviar el mensaje",
+        "sending": "Enviando mensaje..."
+    },
+    "formMessageErrors":{
+        "field": "Este campo es obligatorio",
+        "phone": "Por favor ingresa un número de teléfono válido",
+        "email": "Por favor ingresa un correo electrónico válido"
+    },
+    "footer":{
+        "develop": "Desarrollado por ",
+        "copy": "Copyright © "
+    }
+}

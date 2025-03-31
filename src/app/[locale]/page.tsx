@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { GlassComponents, Sections, VideoBg } from "./components";
+import { GlassComponents, Sections, VideoBg } from "../components";
 
 export const metadata: Metadata = {
   title: "Juan C. Avila | Portfolio",
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <>
+    <div>
       <section
         id="home"
         className="min-h-screen flex justify-center align-middle items-center"
@@ -54,6 +54,6 @@ export default function Home() {
         <GlassComponents gbColor="linear-gradient(135deg, #444, rgb(4 48 51 / 50%))" />
         {/*  <VideoBg videoUrl="/videos/mailarroba.mp4" /> */}
       </section>
-    </>
+    </div>
   );
 }

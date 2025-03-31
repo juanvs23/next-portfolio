@@ -40,7 +40,9 @@ section {
   scrollbar-width: auto;
   scrollbar-color: #007aff transparent;
 }
-
+h2.glitch.text-titleMobile{
+  min-height:72px;
+}
 /* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
   width: 8px;
