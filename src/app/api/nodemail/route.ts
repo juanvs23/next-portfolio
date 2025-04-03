@@ -6,7 +6,7 @@ import { Status } from "@/types";
 import { EmailTemplate } from "@/app/components/emailTemplate";
 
 export async function POST(request: Request) {
-  const emailAccount = process.env.RESEND_API_KEY;
+  const emailAccount = process.env.EMAIL_ACCOUNT;
   /*const password = process.env.EMAIL_PASSWORD; */
   const formData = await request.formData();
   let data = initialForm;
@@ -87,7 +87,7 @@ export async function POST(request: Request) {
   try {
     const email = await resend.emails.send({
       from: "Coltmandev Site <onboarding@resend.dev>",
-      to: [emailAccount || "juanvs23@gmail.com"],
+      to: ["juanvs23@gmail.com"],
       subject: `${data.inputs[3].inputValue}`,
       react: EmailTemplate({
         firstName: "Juan Carlos Avila",
