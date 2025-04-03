@@ -54,9 +54,9 @@
     "encoding": "^0.1.13",
     "sass": "^1.66.1"
   },
-  "packageManager": "pnpm@8.6.12+sha1.a2f983fbf8f2531dc85db2a5d7f398063d51a6f3",
   "resolutions": {
     "@types/react": "19.0.12",
     "@types/react-dom": "19.0.4"
-  }
+  },
+  "packageManager": "yarn@1.22.19+sha1.4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447"
 }
