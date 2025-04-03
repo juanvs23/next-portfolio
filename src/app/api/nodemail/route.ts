@@ -6,7 +6,7 @@ import { Status } from "@/types";
 import { EmailTemplate } from "@/app/components/emailTemplate";
 
 export async function POST(request: Request) {
-  const emailAccount = process.env.EMAIL_ACCOUNT;
+  const emailAccount = process.env.RESEND_API_KEY;
   /*const password = process.env.EMAIL_PASSWORD; */
   const formData = await request.formData();
   let data = initialForm;
@@ -83,7 +83,7 @@ export async function POST(request: Request) {
    * Chance for resend
    */
  
-  const resend = new Resend(process.env.EMAIL_ACCOUNT);
+  const resend = new Resend(process.env.RESEND_API_KEY);
   try {
     const email = await resend.emails.send({
       from: "Coltmandev Site <onboarding@resend.dev>",
