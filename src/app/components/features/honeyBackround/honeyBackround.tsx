@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect } from 'react'
+import React, { useEffect } from 'react';
 import './honeyBackround.scss';
 export default function HoneyBackround() {
     useEffect(() => {
