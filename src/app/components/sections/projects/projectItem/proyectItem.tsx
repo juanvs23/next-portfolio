@@ -1,5 +1,6 @@
 import { ProjectItem } from "@/types";
 import Image from "next/image";
+import { useProjects } from "@/app/constants";
 import React from "react";
 import "./styles.scss";
 
@@ -15,6 +16,7 @@ import "./styles.scss";
  */
 
 function ProyectItemComponent({ data }: { data: ProjectItem }) {
+  const { button } = useProjects();
   const { id, name, url, description, img } = data;
 
   return (
@@ -35,7 +37,7 @@ function ProyectItemComponent({ data }: { data: ProjectItem }) {
           rel="noopener noreferrer"
           className="projectLink"
         >
-          View Page
+          {button}
         </a>
       </div>
     </article>

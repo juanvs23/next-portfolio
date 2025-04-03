@@ -1,15 +1,15 @@
-import { socialNetWorks } from "@/app/constants";
+import { useSocialNetWorks } from "@/app/constants";
 import React from "react";
 import "./networks.scss";
 import { Icons } from "@/app/components";
 
 const Networks = () => {
-  const size = "18";
+  const size = "25";
   return (
     <aside className="networks">
-      <h3 className="our-network">{socialNetWorks.title}</h3>
+      <h3 className="our-network">{useSocialNetWorks().title}</h3>
       <div className="networks-container">
-        {socialNetWorks.netWorks.map((network) => (
+        {useSocialNetWorks().netWorks.map((network) => (
           <a
             key={network.name}
             href={network.link}

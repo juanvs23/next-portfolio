@@ -24,25 +24,25 @@
   z-index: 9;
   transition: 0.5s;
 }
-#swiper-about {
-  .views-about {
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-  }
-  .img-content {
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    border-radius: 15px;
-    img {
-      filter: grayscale(100%);
-      transition: 0.5s;
-      &:hover {
-        filter: grayscale(0);
-      }
+.views-about {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.img-content {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  border-radius: 15px;
+  img {
+    filter: grayscale(100%);
+    transition: 0.5s;
+    &:hover {
+      filter: grayscale(0);
     }
   }
+}
+#swiper-about {
   .swiper-pagination {
     bottom: 0;
     @media (min-width: 768px) {

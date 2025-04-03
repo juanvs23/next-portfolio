@@ -111,9 +111,9 @@ export const IconEmailOpen = ({ color = "inherit", size = "1em" }: IconSvg) => {
       viewBox="0 0 24 24"
       fill={color}
       stroke={color}
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeLinejoin="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       className="lucide lucide-mail-open"
     >
       <path d="M21.2 8.4c.5.38.8.97.8 1.6v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V10a2 2 0 0 1 .8-1.6l8-6a2 2 0 0 1 2.4 0l8 6Z" />
@@ -133,9 +133,9 @@ export const IconEmailClose = ({
       viewBox="0 0 24 24"
       fill={color}
       stroke={color}
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeLinejoin="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       className="lucide lucide-mail-close"
     >
       <rect width={size} height="16" x="2" y="4" rx="2" />
@@ -155,9 +155,9 @@ export const IconEmailCheck = ({
       viewBox="0 0 24 24"
       fill={color}
       stroke={color}
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeLinejoin="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       className="lucide lucide-mail-check"
     >
       <path d="M22 13V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h8" />
@@ -411,9 +411,9 @@ export const ArrowIcon = ({ color = "inherit", size = "1em" }: IconSvg) => {
       viewBox="0 0 24 24"
       fill="none"
       stroke={color}
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeLinejoin="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       className="lucide lucide-move-right"
     >
       <path d="M18 8L22 12L18 16" />
@@ -440,9 +440,9 @@ export const PhpIcon = ({ color = "inherit", size = "1em" }: IconSvg) => {
           gradientTransform="translate(26.52 -9.307)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0" stop-color="#fff" />
-          <stop offset="0.5" stop-color={color} />
-          <stop offset="1" stop-color="#231f20" />
+          <stop offset="0" stopColor="#fff" />
+          <stop offset="0.5" stopColor={color} />
+          <stop offset="1" stopColor="#231f20" />
         </radialGradient>
       </defs>
       <path

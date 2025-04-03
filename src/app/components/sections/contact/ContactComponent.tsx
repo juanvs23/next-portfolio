@@ -3,27 +3,27 @@ import FormComponent from "./form/formComponent";
 import "./index.scss";
 import { useEffect } from "react";
 import AOS from "aos";
-import { contactUs } from "@/app/constants";
-import Sending from "./sending/sending";
+import { useContactUs } from "@/app/constants";
+
 // Add in new releases
 import { ToastContainer } from "react-toastify";
-import { EmailMe } from "@/types/index";
+
 
 export default function ContactComponent() {
-  const contact = contactUs;
-  const { title, hoverTitle, clickedTitle, icons, email } = contact.emailData;
+  const contact = useContactUs();
+  
   useEffect(() => {
     AOS.init();
   }, []);
   return (
     <>
-      <ToastContainer />
+      <ToastContainer/>
       <div
         className="container p-3  w-full z-10 flex justify-center"
         data-aos="fade-up"
       >
         <div className="w-full md:flex iform md:p-4">
-          <div className="w-full flex items-center justify-center md:w-6/12">
+          <div className="w-full flex items-center  md:w-6/12">
             <div className="email pb-6 md:pb-0">
               <h2 className="glitch text-titleMobile lg:text-titledesktop xl:text-xtratitle 2xl:text-maxtitle font-bold">
                 <span aria-hidden="true">{contact.title}</span>

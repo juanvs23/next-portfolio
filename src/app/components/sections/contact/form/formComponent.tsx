@@ -5,16 +5,18 @@ import { HCaptchaInput } from "../../../../helper";
 import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
 
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
+
 
 import "./index.scss";
 import { FormInterface, Status } from "@/types";
 import type HCaptcha from "@hcaptcha/react-hcaptcha/types/index.d.ts";
 
-import { formMessage, initialForm } from "@/app/constants";
+import {  initialForm, useFormMessage,useInitialForm } from "@/app/constants";
 
 export default function FormComponent() {
+  const formMessage = useFormMessage();
+  const useInitialFormTitle = useInitialForm();
   const nameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
   const phoneRef = useRef<HTMLInputElement>(null);
@@ -83,13 +85,6 @@ export default function FormComponent() {
     setToken(token);
   };
 
-  /*  const onLoad = () => {
-    // this reaches out to the hCaptcha JS API and runs the
-    // execute function on it. you can use other functions as
-    // documented here:
-    // https://docs.hcaptcha.com/configuration#jsapi
-    captchaRef.current?.execute();
-  }; */
 
   /**
    * Handles the form submission event.
@@ -221,7 +216,7 @@ export default function FormComponent() {
               className={`placeholder ${formData.inputs[0].active && "active"}`}
               htmlFor="name"
             >
-              {formData.inputs[0].inputTitle}
+              {useInitialFormTitle.inputs[0].inputTitle}
             </label>
           </div>
         </div>
@@ -259,7 +254,7 @@ export default function FormComponent() {
               className={`placeholder ${formData.inputs[2].active && "active"}`}
               htmlFor="email"
             >
-              {formData.inputs[2].inputTitle}
+              {useInitialFormTitle.inputs[2].inputTitle}
             </label>
           </div>
         </div>
@@ -281,7 +276,7 @@ export default function FormComponent() {
               className={`placeholder ${formData.inputs[3].active && "active"}`}
               htmlFor="subject"
             >
-              {formData.inputs[3].inputTitle}
+              {useInitialFormTitle.inputs[3].inputTitle}
             </label>
           </div>
         </div>
@@ -304,7 +299,7 @@ export default function FormComponent() {
               className={`placeholder ${formData.inputs[4].active && "active"}`}
               htmlFor="message"
             >
-              {formData.inputs[4].inputTitle}
+              {useInitialFormTitle.inputs[4].inputTitle}
             </label>
           </div>
         </div>
@@ -331,7 +326,7 @@ export default function FormComponent() {
                 : " bg-blue-600 hover:bg-blue-400"
             }`}
           >
-            Send
+            {useInitialFormTitle.send}
           </button>
         </div>
       </div>
