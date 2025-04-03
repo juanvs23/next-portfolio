@@ -12,7 +12,7 @@ export default function HeaderComponent() {
     setactiveMenu((activeMenu) => !activeMenu);
   };
   const activeClass = activeMenu ? "active" : "";
-  const openMenu = !activeMenu ? "Open here" : "Close here";
+  const openMenu = !activeMenu ? menuName("open") : menuName("close");
   return (
     <nav className={activeClass}>
       <div
@@ -58,16 +58,29 @@ export default function HeaderComponent() {
           </div>
         </Link>
       </div>
-      <div title={menuName('works')} className="pie pie3" onClick={() => handleMenu()}>
-        <Link href="/#works">
+      <div title={menuName('skills')} className="pie pie3" onClick={() => handleMenu()}>
+        <Link href="/#skills">
           <div className="pie-color pie-color3">
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            className="skills  icon"
+            viewBox="0 0 24 24" width="16" height="16" color="#ffffff" fill="none">
+    <path d="M12 19V5C12 3.34315 10.6569 2 9 2C7.34315 2 6 3.34315 6 5C6 5.55228 5.55228 6 5 6C3.34315 6 2 7.34315 2 9C2 10.6569 3.34315 12 5 12C3.34315 12 2 13.3431 2 15C2 16.6569 3.34315 18 5 18C5.55228 18 6 18.4477 6 19C6 20.6569 7.34315 22 9 22C10.6569 22 12 20.6569 12 19Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+    <path d="M12 19V5C12 3.34315 13.3431 2 15 2C16.6569 2 18 3.34315 18 5C18 5.55228 18.4477 6 19 6C20.6569 6 22 7.34315 22 9C22 10.6569 20.6569 12 19 12C20.6569 12 22 13.3431 22 15C22 16.6569 20.6569 18 19 18C18.4477 18 18 18.4477 18 19C18 20.6569 16.6569 22 15 22C13.3431 22 12 20.6569 12 19Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+</svg>
+          </div>
+        </Link>
+      </div>
+      <div title={menuName('works')} className="pie pie4" onClick={() => handleMenu()}>
+        <Link href="/#works">
+          <div className="pie-color pie-color4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
               color="white"
               fill="white"
-              className="work  icon"
+              className="works  icon"
               viewBox="0 0 16 16"
             >
               <path d="M4 16s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H4Zm4-5.95a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
@@ -76,9 +89,9 @@ export default function HeaderComponent() {
           </div>
         </Link>
       </div>
-      <div title={menuName('projects')} className="pie pie4" onClick={() => handleMenu()}>
+      <div title={menuName('projects')} className="pie pie5" onClick={() => handleMenu()}>
         <Link href="/#projects">
-          <div className="pie-color pie-color4">
+          <div className="pie-color pie-color5">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -93,9 +106,9 @@ export default function HeaderComponent() {
           </div>
         </Link>
       </div>
-      <div title={menuName('contact')} className="pie  pie5" onClick={() => handleMenu()}>
+      <div title={menuName('contact')} className="pie  pie6" onClick={() => handleMenu()}>
         <Link href="/#contact">
-          <div className="pie-color pie-color5">
+          <div className="pie-color pie-color6">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"

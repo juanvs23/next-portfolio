@@ -42,6 +42,7 @@ export const UseAbout = ()=>{
   return {
     title: about('title'),
     description: about('description'),
+    skills: about('skills'),
   }
 }
 
@@ -71,131 +72,204 @@ export const useJobs = ()=>{
     jobsItems: jobsItemsTranslate,
   };
 }
-export const projects: ProjectSectionType = {
-  title: "Projects",
-  projectsItems: [
-    {
-      id: 1,
-      name: "Gericht",
-      url: "https://restaurant.coltmandev.dev/",
-      description: "",
-      img: "/img/gericht.jpg",
-    },
-    {
-      id: 2,
-      name: "Cesde",
-      url: "https://www.cesde.edu.co/",
-      description: "",
-      img: "/img/cesde.jpg",
-    },
-    {
-      id: 3,
-      name: "Thinkus",
-      url: "https://thinkus.io/",
-      description: "",
-      img: "/img/thinkous.jpg",
-    },
-    {
-      id: 4,
-      name: "Proyectos Cesde",
-      url: "https://proyectos.cesde.edu.co/",
-      description: "",
-      img: "/img/cesde-proyectos.jpg",
-    },
-    {
-      id: 5,
-      name: "Cesde Colegios",
-      url: "https://colegios.cesde.edu.co/",
-      description: "",
-      img: "/img/colegios.jpg",
-    },
-    {
-      id: 6,
-      name: "Centro de empleo Cesde",
-      url: "https://centrodeempleo.cesde.edu.co/",
-      description: "",
-      img: "/img/empleo.jpg",
-    },
-    {
-      id: 7,
-      name: "Asipi Mexico 2023",
-      url: "https://asipi.org/mexico2023/?lang=es",
-      description: "",
-      img: "/img/asipi-mexico.jpg",
-    },
-    {
-      id: 8,
-      name: "Dogtorscat",
-      url: "https://www.dogtorscat.com/",
-      description: "",
-      img: "/img/dogtor.jpg",
-    },
-    {
-      id: 9,
-      name: "Boulton",
-      url: "https://boultoncre.com/",
-      description: "",
-      img: "/img/boulton.jpg",
-    },
+export const useProjects = ()=>{
+  const projects = useTranslations('projects');
+  return{
+      title: projects('title'),
+      subTitle: projects('subtitle'),
+      button: projects('button'),
+      projectsItems: [
+        {
+          id: 1,
+          name: "Gericht",
+          url: "https://restaurant.coltmandev.dev/",
+          description: "",
+          img: "/img/gericht.jpg",
+        },
+        {
+          id: 2,
+          name: "Cesde",
+          url: "https://www.cesde.edu.co/",
+          description: "",
+          img: "/img/cesde.jpg",
+        },
+        {
+          id: 3,
+          name: "Thinkus",
+          url: "https://thinkus.io/",
+          description: "",
+          img: "/img/thinkous.jpg",
+        },
+        {
+          id: 4,
+          name: "Proyectos Cesde",
+          url: "https://proyectos.cesde.edu.co/",
+          description: "",
+          img: "/img/cesde-proyectos.jpg",
+        },
+        {
+          id: 5,
+          name: "Cesde Colegios",
+          url: "https://colegios.cesde.edu.co/",
+          description: "",
+          img: "/img/colegios.jpg",
+        },
+        {
+          id: 6,
+          name: "Centro de empleo Cesde",
+          url: "https://centrodeempleo.cesde.edu.co/",
+          description: "",
+          img: "/img/empleo.jpg",
+        },
+        {
+          id: 7,
+          name: "Asipi Mexico 2023",
+          url: "https://asipi.org/mexico2023/?lang=es",
+          description: "",
+          img: "/img/asipi-mexico.jpg",
+        },
+        {
+          id: 8,
+          name: "Dogtorscat",
+          url: "https://www.dogtorscat.com/",
+          description: "",
+          img: "/img/dogtor.jpg",
+        },
+        {
+          id: 9,
+          name: "Boulton",
+          url: "https://boultoncre.com/",
+          description: "",
+          img: "/img/boulton.jpg",
+        },
 
-    {
-      id: 10,
-      name: "Venecredits",
-      url: "https://venecreditsecurities.com/en/",
-      description: "",
-      img: "/img/venecredits.jpg",
-    },
-    {
-      id: 11,
-      name: "Hisomos",
-      url: "https://hisomos.com/",
-      description: "",
-      img: "/img/hisomo.jpg",
-    },
-    {
-      id: 12,
-      name: "Book project",
-      url: "https://projects.coltmandev.dev/product-book/",
-      description: "",
-      img: "/img/book-test.jpg",
-    },
-    {
-      id: 13,
-      name: "LuxlifemiamiBlog",
-      url: "https://luxlifemiamiblog.com/",
-      description: "",
-      img: "/img/luxlife.jpg",
-    },
-    {
-      id: 14,
-      name: "Boreal Expedition",
-      url: "https://borealexpedition.com/",
-      description: "",
-      img: "/img/boreal.jpg",
-    },
-    {
-      id: 15,
-      name: "Emprende",
-      url: "https://emprende.cesde.edu.co/",
-      description: "",
-      img: "/img/emprende.jpg",
-    },
-    {
-      id: 16,
-      name: "Fancy Login",
-      description: "",
-      img: "https://github.com/juanvs23/fancy-login/raw/master/public/demo.jpg",
-      url: "https://projects.coltmandev.dev/fancy-login/",
-    },
-    {
-      id:17,
-      name: "Incredible Table",
-      description: "",
-      img: "/img/incredible-room.jpg",
-      url: "https://incredible-table.vercel.app/",
-    }
-  ],
-};
+        {
+          id: 10,
+          name: "Venecredits",
+          url: "https://venecreditsecurities.com/en/",
+          description: "",
+          img: "/img/venecredits.jpg",
+        },
+        {
+          id: 11,
+          name: "Hisomos",
+          url: "https://hisomos.com/",
+          description: "",
+          img: "/img/hisomo.jpg",
+        },
+        {
+          id: 12,
+          name: "Book project",
+          url: "https://projects.coltmandev.dev/product-book/",
+          description: "",
+          img: "/img/book-test.jpg",
+        },
+        {
+          id: 13,
+          name: "LuxlifemiamiBlog",
+          url: "https://luxlifemiamiblog.com/market-statistics/",
+          description: "",
+          img: "/img/luxlife.jpg",
+        },
+        {
+          id: 14,
+          name: "Boreal Expedition",
+          url: "https://borealexpedition.com/",
+          description: "",
+          img: "/img/boreal.jpg",
+        },
+        {
+          id: 15,
+          name: "Emprende",
+          url: "https://emprende.cesde.edu.co/",
+          description: "",
+          img: "/img/emprende.jpg",
+        },
+        {
+          id: 16,
+          name: "Fancy Login",
+          description: "",
+          img: "https://github.com/juanvs23/fancy-login/raw/master/public/demo.jpg",
+          url: "https://projects.coltmandev.dev/fancy-login/",
+        },
+        {
+          id:17,
+          name: "Incredible Table",
+          description: "",
+          img: "/img/incredible-room.jpg",
+          url: "https://incredible-table.vercel.app/",
+        },
+        {
+          id: 18,
+          name: "Pockemon API",
+          description: "",
+          url: "https://next-pokemon-coral.vercel.app/",
+          img: "/img/pockemon.webp",
+        },
+      ],
+    };
+
+}
+
+export const useSeo = () => {
+  
+}
+
+
+export const useInitialForm = () => {
+  const inputField = useTranslations('inputField');
+/*
+ "fullName": "Nombre Completo",
+        "phone": "Teléfono",
+        "email": "Correo",
+        "subject": "Asunto",
+        "message": "Mensaje",
+        "send": "Enviar"
+*/
+  return{
+    status: Status.idle,
+    message: "",
+    send: inputField('send'),
+    inputs: [
+      {
+        name: "name",
+        inputTitle: inputField('fullName'),
+        inputValue: "",
+        inputError: null,
+        active: false,
+      },
+      {
+        name: "phone",
+        inputTitle: inputField('phone'),
+        inputValue: "",
+        inputError: null,
+        active: false,
+      },
+      {
+        name: "email",
+        inputTitle: inputField('email'),
+        inputValue: "",
+        inputError: null,
+        active: false,
+      },
+      {
+        name: "subject",
+        inputTitle: inputField('subject'),
+        inputValue: "",
+        inputError: null,
+        active: false,
+      },
+      {
+        name: "message",
+        inputTitle: inputField('message'),
+        inputValue: "",
+        inputError: null,
+        active: false,
+      },
+    ],
+
+  };
+}
 
 export const initialForm: FormInterface = {
   status: Status.idle,
@@ -268,13 +342,13 @@ export const useFormMessage = ()=>{
   const formMessage = useTranslations('formMessage');
   const formMessageErrors = useTranslations('formMessageErrors');
   return{
-    success: "Message sent successfully",
-    error: "Please try again... Later, Sorry. Contact me by email on my footer",
-    sending: "Sending message",
+    success: formMessage('success'),
+    error: formMessage('error'),
+    sending: formMessage('sending'),
     errors: {
-      field: "This field is required",
-      phone: "Please enter a valid phone number",
-      email: "Please enter a valid email",
+      field: formMessageErrors('field'),
+      phone: formMessageErrors('phone'),
+      email: formMessageErrors('email'),
     },
   };
 }

@@ -4,7 +4,8 @@
     },
     "about": {
         "title": "CONÓCEME",
-        "description": "¡Hola! Soy Juan Carlos Ávila, Desarrollador Full Stack con 5+ años de experiencia en tecnologías como JavaScript (React, Node.js), PHP y WordPress, complementados con conocimientos en Python, administración de servidores Linux y desarrollo con Node.js. Fuera del trabajo, mi pasión por la tecnología se extiende a mis hobbies, donde disfruto experimentando con nuevas herramientas y desarrollando proyectos personales. <br/><br/> Especializado en crear aplicaciones web escalables, integraciones con APIs (PayPal, Stripe, Google) y soluciones personalizadas para e-commerce y sitios institucionales.  Apasionado por el código limpio, la optimización de rendimiento y el aprendizaje continuo. Experiencia trabajando en equipo y en proyectos autónomos, entregando productos robustos y eficientes."
+        "description": "¡Hola! Soy Juan Carlos Ávila, Desarrollador Full Stack con 5+ años de experiencia en tecnologías como JavaScript (React, Node.js), PHP y WordPress, complementados con conocimientos en Python, administración de servidores Linux y desarrollo con Node.js. Fuera del trabajo, mi pasión por la tecnología se extiende a mis hobbies, donde disfruto experimentando con nuevas herramientas y desarrollando proyectos personales. <br/><br/> Especializado en crear aplicaciones web escalables, integraciones con APIs (PayPal, Stripe, Google) y soluciones personalizadas para e-commerce y sitios institucionales.  Apasionado por el código limpio, la optimización de rendimiento y el aprendizaje continuo. Experiencia trabajando en equipo y en proyectos autónomos, entregando productos robustos y eficientes.",
+        "skills": "Mis Habilidades"
     },
     "jobs":{
         "title": "Experiencia Laboral"
@@ -68,9 +69,12 @@
     "menu":{
         "home": "Inicio",
         "about": "Acerca de mí",
+        "skills": "Mis Habilidades",
         "works": "Experiencia Laboral",
         "projects": "Proyectos",
-        "contact": "Contacto"
+        "contact": "Contacto",
+        "open": "Abrir Menú",
+        "close": "Cerrar Menú"
     },
     "contactUs":{
         "title": "Contáctame",
@@ -95,5 +99,27 @@
     "footer":{
         "develop": "Desarrollado por ",
         "copy": "Copyright © "
+    },
+    "inputField":{
+        "fullName": "Nombre Completo",
+        "phone": "Teléfono",
+        "email": "Correo",
+        "subject": "Asunto",
+        "message": "Mensaje",
+        "send": "Enviar"
+    },
+    "projects":{
+        "title": "Proyectos",
+        "subtitle": "Algunos proyectos en los que he trabajado",
+        "button": "Ver proyecto"
+    },
+    "LocaleSwitcher":{
+        "label":"El idioma actual es ",
+        "en": "Ingles",
+        "es": "Español"
+    },
+    "seo":{
+        "title": "Juan Carlos Avila – Desarrollador Full Stack con 6+ Años de Experiencia | Buscando Nuevos Retos",
+        "description": "🚀 Desarrollador Web Full Stack con 6+ años de experiencia | PHP, Python, JavaScript (React, Next.js), WordPress, Laravel & Django | ¡Buscando trabajo inmediato! 📢 Apasionado por soluciones escalables y código limpio. Contáctame para proyectos desafiantes o colaboraciones."
     }
 }

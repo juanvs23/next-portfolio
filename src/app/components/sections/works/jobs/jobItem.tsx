@@ -5,7 +5,6 @@ import "./jobComponent.scss";
 
 export default function JobComponent({ job }: { job: JobItem }) {
   const locale = useLocale();
-  console.log(locale);
   const {
     title,
     date: { startDate, endDate },

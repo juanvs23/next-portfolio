@@ -1,13 +1,20 @@
 import { Metadata } from "next";
-import { GlassComponents, Sections, VideoBg } from "../components";
+import { GlassComponents, HoneyBackround, Sections } from "../components";
+import { getTranslations } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Juan C. Avila | Portfolio",
-  description: "This is my portfolio website created with Next.js",
+
+export async function generateMetadata({params}: Readonly<{params:Promise<{locale: string}>}>): Promise<Metadata> {
+  const {locale} = await params;
+  const t = await getTranslations({locale, namespace: 'seo'});
+ 
+  return {
+    title: t('title'),
+    description: t('description'),
   icons: {
-    icon: [{ url: "/img/email-icon.png", type: "image/png" }],
-  },
-};
+      icon: [{ url: "/img/email-icon.png", type: "image/png" }],
+    },
+  };
+}
 
 export default function Home() {
   return (
@@ -17,13 +24,16 @@ export default function Home() {
         className="min-h-screen flex justify-center align-middle items-center"
       >
         <Sections.Hero />
-        <GlassComponents gbColor="linear-gradient(135deg, #444, #010a0a94)" />
-        <VideoBg videoUrl={[{ type: "video/mp4", url: "/videos/home.mp4" }]} />
+        {/* <GlassComponents gbColor="linear-gradient(135deg, #444, #010a0a94)" /> */}
+        <HoneyBackround/>
       </section>
       <section id="about" className="z-10">
-        <Sections.About />
+        <Sections.ViewAbout />
         <GlassComponents gbColor="linear-gradient(135deg, rgb(68, 68, 68), rgb(4 37 46 / 80%))" />
-        {/*  <VideoBg videoUrl="/videos/about.mp4" /> */}
+      </section>
+      <section id="skills" className="z-10">
+        <Sections.Skills />
+        <GlassComponents gbColor="linear-gradient(135deg, rgb(68, 68, 90), rgb(4 37 46 / 80%))" />
       </section>
       <section
         id="works"
@@ -31,7 +41,6 @@ export default function Home() {
       >
         <Sections.Works />
         <GlassComponents gbColor="linear-gradient(135deg, #444, rgb(8 49 72 / 80%))" />
-        {/*  <VideoBg videoUrl="/videos/writting.mp4" /> */}
       </section>
       <section
         id="projects"
@@ -39,12 +48,7 @@ export default function Home() {
       >
         <Sections.Projects />
         <GlassComponents gbColor="linear-gradient(135deg, #444, rgb(6 27 51 / 50%));" />
-        {/*  <VideoBg
-          videoUrl={[
-            { type: "video/webm", url: "/videos/code.webm" },
-            { type: "video/mp4", url: "/videos/code.mp4" },
-          ]}
-        /> */}
+      
       </section>
       <section
         id="contact"

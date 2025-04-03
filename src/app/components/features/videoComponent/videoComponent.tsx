@@ -12,7 +12,7 @@ function VideoComponent(props: VideoUrlsProp) {
 
   return (
     <div className="video-bg">
-      <video width="1280" height="720" autoPlay muted preload="none" loop>
+      <video width="1280" height="720"  autoPlay muted preload="none" loop>
         {typeof videoUrl === "string" ? (
           <source src={videoUrl} type="video/mp4" />
         ) : (

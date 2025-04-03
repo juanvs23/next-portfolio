@@ -25,8 +25,8 @@ export default async function LocaleLayout({
     notFound();
   }
   return (
-    <html lang={locale} suppressHydrationWarning>
-      <body className={inter.className}>
+    <html lang={locale} >
+      <body className={inter.className} suppressHydrationWarning>
         <NextIntlClientProvider>
           <layouts.LayoutComponent>{children}</layouts.LayoutComponent>
         </NextIntlClientProvider>

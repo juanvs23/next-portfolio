@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import Atropos from "atropos/react";
@@ -20,13 +21,13 @@ const ViewAbout = (): React.ReactElement => {
       <div className="">
         <div className="container flex-col-reverse flex md:flex-row">
           <div className="w-full md:w-6/12">
-            <h2 className="glitch text-titleMobile lg:text-titledesktop xl:text-xtratitle 2xl:text-maxtitle font-bold">
+            <h2 className="glitch text-titleMobile lg:text-titledesktop xl:text-xtratitle 2xl:text-maxtitle font-bold z-20">
               <span aria-hidden="true">{about.title}</span>
               <span>{about.title}</span>
               <span aria-hidden="true">{about.title}</span>
             </h2>
             <article
-              className="text-leading-7 text-base md:text-md lg:text-lg xl:text-xl 2xl:text-2xl "
+              className="text-leading-7 text-base md:text-md"
               style={{
                 lineHeight: "1.5",
                 maxWidth: "600px",
@@ -35,7 +36,7 @@ const ViewAbout = (): React.ReactElement => {
               }}
                dangerouslySetInnerHTML={{ __html: about.description }} />
           </div>
-          <div className="w-full md:w-6/12 flex align-center justify-center items-center">
+          <div className="w-full md:w-6/12 flex align-center justify-center items-center z-20">
             <Atropos highlight={true}>
               <div data-atropos-offset="1" className="img-content">
                 <Image
