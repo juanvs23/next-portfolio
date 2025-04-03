@@ -82,7 +82,8 @@ export async function POST(request: Request) {
   /**
    * Chance for resend
    */
-  const resend = new Resend(process.env.RESEND_API_KEY);
+ 
+  const resend = new Resend(process.env.EMAIL_ACCOUNT);
   try {
     const email = await resend.emails.send({
       from: "Coltmandev Site <onboarding@resend.dev>",
@@ -100,6 +101,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ email });
   } catch (error) {
+    console.log(error);
     return NextResponse.json(
       {
         status: Status.error,
