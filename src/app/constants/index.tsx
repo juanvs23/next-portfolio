@@ -122,33 +122,11 @@ export const useProjects = ()=>{
           img: "/img/empleo.jpg",
         },
         {
-          id: 7,
-          name: "Asipi Mexico 2023",
-          url: "https://asipi.org/mexico2023/?lang=es",
-          description: "",
-          img: "/img/asipi-mexico.jpg",
-        },
-        {
           id: 8,
           name: "Dogtorscat",
           url: "https://www.dogtorscat.com/",
           description: "",
           img: "/img/dogtor.jpg",
-        },
-        {
-          id: 9,
-          name: "Boulton",
-          url: "https://boultoncre.com/",
-          description: "",
-          img: "/img/boulton.jpg",
-        },
-
-        {
-          id: 10,
-          name: "Venecredits",
-          url: "https://venecreditsecurities.com/en/",
-          description: "",
-          img: "/img/venecredits.jpg",
         },
         {
           id: 11,
@@ -205,6 +183,13 @@ export const useProjects = ()=>{
           description: "",
           url: "https://next-pokemon-coral.vercel.app/",
           img: "/img/pockemon.webp",
+        },
+         {
+          id: 19,
+          name: "News App",
+          description: "",
+          url: "https://news-app-sage-theta.vercel.app/",
+          img: "/img/news-app.webp",
         },
       ],
     };
