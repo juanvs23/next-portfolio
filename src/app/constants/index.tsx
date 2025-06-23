@@ -191,6 +191,20 @@ export const useProjects = ()=>{
           url: "https://news-app-sage-theta.vercel.app/",
           img: "/img/news-app.webp",
         },
+        {
+          id: 20,
+          name: "Bajalenx",
+          description: "",
+          url: "https://projects.coltmandev.dev/bajalenx/",
+          img: "/img/bajalenx.webp",
+        },
+        {
+          id: 21,
+          name: "Clima App",
+          description: "",
+          url: "https://clima-gray-nine.vercel.app/",
+          img: "/img/clima-app.webp",
+        },
       ],
     };
 

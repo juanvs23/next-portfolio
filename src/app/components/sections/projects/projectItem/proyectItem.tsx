@@ -27,7 +27,7 @@ function ProyectItemComponent({ data }: { data: ProjectItem }) {
         alt={name}
         width={650}
         height={760}
-        className="image-bg object-cover"
+        className="image-bg max-h-[400px] object-top object-cover"
       />
       <h3 className="projectname">{name}</h3>
       <div className="button-container">
