@@ -21,15 +21,8 @@ function ProjectContainer({ projects }: { projects: ProjectItem[] }) {
   const useswiper = useSwiper();
   const [prevEl, setPrevEl] = useState<HTMLElement | null>(null);
   const [nextEl, setNextEl] = useState<HTMLElement | null>(null);
-  const projectList = projects.sort((a, b) => {
-    if (a.name < b.name) {
-      return -1;
-    }
-    if (a.name > b.name) {
-      return 1;
-    }
-    return 0;
-  });
+
+ const projectList = projects.sort((a, b) => b.id - a.id);
   const navigationOptions = {
     nextEl,
     prevEl,
