@@ -1,0 +1,50 @@
+---
+import { getTranslations, type Locale } from '@/i18n';
+import Section from '../ui/Section.astro';
+import Badge from '../ui/Badge.astro';
+import AsciiMarker from '../ui/AsciiMarker.astro';
+import { getJobs } from '@/constants/jobs';
+import { formatDate } from '@/utils/format-date';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = await getTranslations(locale);
+
+const jobs = getJobs(t);
+const months = t('common.months') as string[];
+---
+
+<Section id="experience" data-aos="fade-up" data-aos-delay="150">
+  <h1 data-typewriter data-aos="fade-down" class="text-[30px] md:text-[35px] lg:text-[38px] font-bold mb-sm">
+    {t('seo.h1.experience')}
+  </h1>
+
+  <div class="border-b border-hairline mb-xl" data-aos="fade-up" data-aos-delay="100"></div>
+
+  <div class="space-y-0">
+    {jobs.map((job, index) => (
+      <div class={`py-lg ${index < jobs.length - 1 ? 'border-b border-hairline' : ''}`} data-aos="fade-in" data-aos-delay="300">
+        <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-sm mb-sm">
+          <div>
+            <h3 class="text-body-strong text-ink">
+              <AsciiMarker state={index === 0 ? 'done' : 'add'} class="mr-xs inline" />
+              {job.title}
+            </h3>
+            <p class="text-body-md text-mute mt-xs">{job.company}</p>
+          </div>
+
+          <span class="text-caption-md text-ash whitespace-nowrap">
+            {formatDate(job.start, months)} — {job.end !== 'null' && job.end ? formatDate(job.end, months) : t('common.present')}
+          </span>
+        </div>
+
+        <p class="text-body-md text-body leading-[1.5] pl-lg md:pl-[calc(1rem+1.5em)]">
+          {job.description}
+        </p>
+      </div>
+    ))}
+  </div>
+</Section>
